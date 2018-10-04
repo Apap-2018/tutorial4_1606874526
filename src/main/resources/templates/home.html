@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Home</title>
+	</head>
+	
+	<body>
+		<h2>Hello!</h2>
+		
+		<h3>List Dealer</h3>
+		<td><a th:href="@{/dealer/view-all}">Lihat</a></td>
+		
+		<h3>Tambah Dealer</h3>
+		<td><a th:href="@{/dealer/add}">Tambah</a></td>
+		
+		<h3>Cari Dealer berdasarkan Id</h3>
+		<form th:action="@{/dealer/view}" method="GET">
+			Id Dealer: <br>
+			<input type="text" name="dealerId"/>
+			<button type="submit">Cari</button>
+		</form>
+		
+		<h3>Hapus Dealer berdasarkan Id Dealer</h3>
+		<form th:action="@{/dealer/delete}" method="GET">
+			Id Dealer: <br>
+			<input type="text" name="dealerIdd"/>
+			<button type="submit">Delete</button>
+		</form>
+		
+		<h3>Hapus Car berdasarkan Id Car</h3>
+		<form th:action="@{/car/delete}" method="GET">
+			Id Car: <br>
+			<input type="text" name="carIdd"/>
+			<button type="submit">Delete</button>
+		</form>
+		
+		<h3>Update Dealer berdasarkan Id Dealer</h3>
+		<h5>Harap memasukkan alamat dan no telepon. Field id, alamat, dan telepon wajib diisi sebelum melakukan update.</h5>
+		<form th:action="@{/dealer/update}" method="GET">
+			Id Dealer: <br>
+			<input type="text" name="dealerIdu"/>
+			</br>
+			Alamat Baru Dealer: <br>
+			<input type="text" name="dealerAlamatu"/>
+			</br>
+			Telepon Baru Dealer: <br>
+			<input type="text" name="dealerNoTelpu"/>
+			<button type="submit">Update Dealer</button>
+			<br>
+			</br>
+		</form>
+		
+		<h3>Update Car berdasarkan Id Car</h3>
+		<h5>Harap memasukkan brand, type, price, dan amount. Field id, brand, type, price, dan amount wajib diisi sebelum melakukan update.</h5>
+		<form th:action="@{/car/update}" method="GET">
+			Id Car: <br>
+			<input type="text" name="carIdu"/>
+			</br>
+			Brand Baru Car: <br>
+			<input type="text" name="carBrandu"/>
+			</br>
+			Tipe Baru Car: <br>
+			<input type="text" name="carTypeu"/>
+			</br>
+			Harga Baru Car: <br>
+			<input type="text" name="carPriceu"/>
+			</br>
+			Jumlah Baru Car: <br>
+			<input type="text" name="carAmountu"/>
+			<button type="submit">Update Car</button>
+			<br>
+			</br>
+		</form>
+	</body>
+</html>
