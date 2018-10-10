@@ -58,7 +58,7 @@ public class DealerModel implements Serializable {
 
 	public List<CarModel> getListCar() {
 		for (int i = 1; i < listCar.size(); i++) { 
-            int j = i--;
+            int j = i - 1;
             while (j >= 0 && listCar.get(j).getPrice() < listCar.get(i).getPrice()) { 	
             	listCar.set(j+1, listCar.get(j));
                 j--; 
