@@ -57,20 +57,23 @@ public class DealerModel implements Serializable {
 	}
 
 	public List<CarModel> getListCar() {
-		for (int i = 1; i < listCar.size(); i++) { 
-            int j = i - 1;
-            while (j >= 0 && listCar.get(j).getPrice() < listCar.get(i).getPrice()) { 	
-            	listCar.set(j+1, listCar.get(j));
-                j--; 
-            } 
-            listCar.set(j+1, listCar.get(i)); 
-        }
+		Collections.sort(listCar, compareByCarPriceAsc);
 		return listCar;
 	}
 
 	public void setListCar(List<CarModel> listCar) {
 		this.listCar = listCar;
 	}
+	public static Comparator<CarModel> compareByCarPriceAsc = new Comparator<CarModel>() {
+		
+		@Override
+		public int compare(CarModel arg0, CarModel arg1) {
+			// TODO Auto-generated method stub
+			Long price0 = arg0.getPrice();
+			Long price1 = arg1.getPrice();
+			return price0.compareTo(price1);
+		}
+	};
 	
 	
 }
